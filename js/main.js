@@ -20,7 +20,7 @@ function eleccion(){
         return;
     }
     procesoDeEleccion(option);
-}
+    }
 eleccion();
 function procesoDeEleccion(option){
     switch (option){
@@ -76,18 +76,24 @@ alert("el precio por unidad de aros con descuento del 20% es de " + descuento20)
 alert("el precio por unidad de aros con descuento del 30% es de " + descuento30);
 //DATE
 const hoy = new Date("January 18, 2023");
-const findemes = new Date("March 1, 2023");
+const findepromo = new Date("March 1, 2023");
 const milisegundospordia = 86400000;
-alert ("Nuestra oferta en aros finaliza en: " + ((findemes - hoy)/ milisegundospordia ) + "dias");
+alert ("Nuestra oferta en aros finaliza en: " + ((findepromo - hoy)/ milisegundospordia ) + "dias");
 //OBJETOS
 const productoAros = [{id:1, producto:"cruz", seccion: "Aros", precio: 500},
                 {id:2, producto: "classic", seccion: "Aros", precio: 500},
                 {id: 3, producto: "estrellita", seccion: "Aros", precio: 500 },
                 {id: 4, producto: "finos", seccion: "Aros", precio: 500}]
 console.log (productoAros);
+//STORAGE;
+const miJsonAros = JSON.stringify(productoAros);
+localStorage.setItem("aros", miJsonAros);
 //
 const productoColgantes = [{id:5, producto: "Varios", seccion: "Colgantes", precio: 700}];
 console.log(productoColgantes);
+//STORAGE;
+const miJsonColgantes = JSON.stringify(productoColgantes);
+localStorage.setItem("colgantes", miJsonColgantes);
 //
 const productoCelulares = [{id:6, producto: "variosCelu", seccion:"Celulares", precio: 700},
                     {id:7, producto: "S10+Auris", seccion: "Celulares", precio: 700},
@@ -95,12 +101,19 @@ const productoCelulares = [{id:6, producto: "variosCelu", seccion:"Celulares", p
                     {id:9, producto:"cableTipoC", seccion: "Celulares", precio: 700},
                     {id:10, producto: "vidrio", seccion: "Celulares", precio: 700}]
 console.log(productoCelulares);
+//STORAGE;
+const miJsonCelulares = JSON.stringify(productoCelulares);
+localStorage.setItem("celulares", miJsonCelulares);
 //
 const productoPC = [{id:11, producto:"joystick", seccion: "PC", precio: 1200},
 {id:12, producto: "antena", seccion: "PC", precio: 1000},
-{id: 13, producto: "kingston", seccion: "PC", precio: 300 },
+{id: 13, producto: "kingston", seccion: "PC", precio: 300},
 {id: 14, producto: "usb5.0", seccion: "PC", precio: 500}]
 console.log(productoPC);
+//STORAGE;
+const miJsonPC = JSON.stringify(productoPC);
+localStorage.setItem("PC", miJsonPC);
+//CONCAT;
 const productos = productoAros.concat(productoColgantes, productoCelulares, productoPC);
 console.log(productos);
 //
@@ -129,3 +142,12 @@ console.log(Math.max (500,700,1200,1000,300));
 //
 alert("El precio del producto mas barato de la web es de " + Math.min (500,700,1200,1000,300));
 console.log(Math.min (500,700,1200,1000,300));
+//DOM;
+let correccion = document.getElementById("error1");
+correccion.innerHTML = "Colgantes";
+console.log (correccion);
+document.getElementById("nombre").value = "Coder";
+// EVENTOS;
+let boton = document.getElementById("boton")
+boton.onclick = () => {console.log("Enviar")}
+boton.onmousemove = () => {console.log("Movimientos del mouse dentro del campo")};
