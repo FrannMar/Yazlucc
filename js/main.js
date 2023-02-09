@@ -84,13 +84,11 @@ const productoAros = [{id:1, producto:"cruz", seccion: "Aros", precio: 500},
                 {id:2, producto: "classic", seccion: "Aros", precio: 500},
                 {id: 3, producto: "estrellita", seccion: "Aros", precio: 500 },
                 {id: 4, producto: "finos", seccion: "Aros", precio: 500}]
-console.log (productoAros);
 //STORAGE;
 const miJsonAros = JSON.stringify(productoAros);
 localStorage.setItem("aros", miJsonAros);
 //
 const productoColgantes = [{id:5, producto: "Varios", seccion: "Colgantes", precio: 700}];
-console.log(productoColgantes);
 //STORAGE;
 const miJsonColgantes = JSON.stringify(productoColgantes);
 localStorage.setItem("colgantes", miJsonColgantes);
@@ -100,7 +98,11 @@ const productoCelulares = [{id:6, producto: "variosCelu", seccion:"Celulares", p
                     {id:8, producto: "genAuris", seccion: "Celulares", precio: 700},
                     {id:9, producto:"cableTipoC", seccion: "Celulares", precio: 700},
                     {id:10, producto: "vidrio", seccion: "Celulares", precio: 700}]
-console.log(productoCelulares);
+//JSON;
+const miJSON = JSON.stringify(productoCelulares);
+console.log (miJSON);
+console.log (typeof miJSON);
+console.log (typeof productoCelulares);
 //STORAGE;
 const miJsonCelulares = JSON.stringify(productoCelulares);
 localStorage.setItem("celulares", miJsonCelulares);
@@ -109,13 +111,11 @@ const productoPC = [{id:11, producto:"joystick", seccion: "PC", precio: 1200},
 {id:12, producto: "antena", seccion: "PC", precio: 1000},
 {id: 13, producto: "kingston", seccion: "PC", precio: 300},
 {id: 14, producto: "usb5.0", seccion: "PC", precio: 500}]
-console.log(productoPC);
 //STORAGE;
 const miJsonPC = JSON.stringify(productoPC);
 localStorage.setItem("PC", miJsonPC);
 //CONCAT;
 const productos = productoAros.concat(productoColgantes, productoCelulares, productoPC);
-console.log(productos);
 //
 function Tengo (b) {
     return (a) => a > b;
@@ -151,3 +151,92 @@ document.getElementById("nombre").value = "Coder";
 let boton = document.getElementById("boton")
 boton.onclick = () => {console.log("Enviar")}
 boton.onmousemove = () => {console.log("Movimientos del mouse dentro del campo")};
+//STORAGE GETITEM;
+let obtener = localStorage.getItem('aros');
+alert ("esto es el array de objetos de AROS" + obtener);
+/*INTERVALOS; PRACTICA
+let doy;
+let dame = setInterval (() => {
+    console.log("Dame una A")
+} , 1000);
+setTimeout (() => {
+    doy = setInterval(() => {
+        console.log("Te doy una A")
+    },2000)
+},2000);
+dame = setInterval (() => {
+    console.log("Dame una L")
+} , 3000);
+    setTimeout (() => {
+        doy = setInterval(() => {
+        console.log("Te doy una L")
+    },4000)
+},4000);
+dame=setInterval (() => {
+    console.log("Dame una A")
+} , 5000);
+    setTimeout (() => {
+        doy = setInterval(() => {
+        console.log("Te doy una A")
+    },6000)
+},6000);
+dame = setInterval (() => {
+    console.log("Dame una M")
+} , 7000);
+    setTimeout (() => {
+        doy = setInterval(() => {
+        console.log("Te doy una M")
+    },8000)
+},8000);
+dame = setInterval (() => {
+    console.log("Dame una A")
+} , 9000);
+    setTimeout (() => {
+    doy=setInterval(() => {
+        console.log("Te doy una A")
+    },10000)
+},10000);
+dame = setInterval (() => {
+    console.log("Dame una U")
+} , 11000);
+setTimeout (() => {
+    doy = setInterval(() => {
+        console.log("Te doy una U")
+    },12000)
+},12000);
+dame = setInterval (() => {
+    console.log("Dame una L")
+} , 13000);
+setTimeout (() => {
+    doy = setInterval(() => {
+        console.log("Te doy una L")
+    },14000)
+},14000);
+dame = setInterval (() => {
+    console.log("Dame una A")
+} , 15000);
+setTimeout (() => {
+    doy = setInterval(() => {
+        console.log("Te doy una A")
+    },16000)
+},16000);
+dame = setInterval (() => {
+    console.log("¿Que tenemos?")
+} , 17000);
+setTimeout (() => {
+    doy = setInterval(() => {
+        console.log("ALAMAULA")
+    },18000)
+} ,18000);
+dame = setInterval (() => {
+    console.log("¿Que tenemos?")
+} , 20000);
+setTimeout (() => {
+    doy = setInterval(() => {
+        console.log("ALAMAULA")
+    },21000)
+},21000);
+setInterval (() => {
+    clearInterval(dame)
+    clearInterval(doy)
+},21000);*/
