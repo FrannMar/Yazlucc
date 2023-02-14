@@ -32,17 +32,12 @@ main{
 h1{
     background-color: aliceblue;
 }
-h2{
-    background-color: whitesmoke;
-}
 img{
     border-radius: 17px;
     width: 150px;
 }
-.aros{
-    display: flex;
-}
 .arosimg{
+    display: flex;
     width: 180px;
     height: 150px;
     border: solid gray;
@@ -54,9 +49,6 @@ img{
 p{
     background-color: aliceblue;
     border: solid black 2px;
-}
-.colgantes{
-    display: flex;
 }
 .collaresimg{
     width: 180px;
@@ -76,9 +68,7 @@ p{
     width: 55px;
     height: 55px;
 }
-.celulares{
-    display: flex;
-}
+
 .celularesimg{
     width: 130px;
     height: 100px;
@@ -87,9 +77,6 @@ p{
 }
 .celularesimg:hover{
     transform: scale(1.8);
-}
-.pc{
-    display: flex;
 }
 .pcimg{    
     width: 180px;
@@ -119,4 +106,21 @@ a{
 }
 a:hover{
     color: lightcoral;
+}
+h2{
+    font-size: 30px;
+    display: flex;
+    background-color: whitesmoke;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+.aros, .colgantes, .celulares, .pc {
+    display: flex;
+}
+.carritoProdu{
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
 }

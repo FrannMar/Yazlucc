@@ -1,4 +1,4 @@
-const precioaros = 500;
+/*const precioaros = 500;
 const preciocollares = 700;
 const preciocelulares = 600;
 const preciopc = 300;
