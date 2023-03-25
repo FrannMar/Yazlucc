@@ -123,3 +123,23 @@ h2{
     width: 40px;
     height: 40px;
 }
+.secarosp{
+    display: flex;
+}
+.secaroso{
+    display:flex ;
+}
+.secarosv{
+    display: flex;
+}
+.seccollares{
+    display: flex;
+}
+.secpc{
+    display: flex;
+    flex-wrap: wrap;
+}
+.seccelu{
+    display: flex;
+    flex-wrap: wrap;
+}

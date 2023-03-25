@@ -69,7 +69,7 @@ function totalFinal(preciopc, cantidadpc){
     totalpc = preciopc * cantidadpc;
     return totalpc;
 }
-prompt('Hay una promo del 20% y 30% en aros ¿Cuántos aros llevas?');
+/*prompt('Hay una promo del 20% y 30% en aros ¿Cuántos aros llevas?');
 let descuento20 = precioaros - (precioaros  * 0.2);
 let descuento30 = precioaros - (precioaros  * 0.3);
 alert("el precio por unidad de aros con descuento del 20% es de " + descuento20);
@@ -79,41 +79,22 @@ const hoy = new Date("January 18, 2023");
 const findepromo = new Date("March 1, 2023");
 const milisegundospordia = 86400000;
 alert ("Nuestra oferta en aros finaliza en: " + ((findepromo - hoy)/ milisegundospordia ) + "dias");
+*/
 //OBJETOS
 const productoAros = [{id:1, producto:"cruz", seccion: "Aros", precio: 500},
                 {id:2, producto: "classic", seccion: "Aros", precio: 500},
                 {id: 3, producto: "estrellita", seccion: "Aros", precio: 500 },
                 {id: 4, producto: "finos", seccion: "Aros", precio: 500}]
-//STORAGE;
-const miJsonAros = JSON.stringify(productoAros);
-localStorage.setItem("aros", miJsonAros);
-//
 const productoColgantes = [{id:5, producto: "Varios", seccion: "Colgantes", precio: 700}];
-//STORAGE;
-const miJsonColgantes = JSON.stringify(productoColgantes);
-localStorage.setItem("colgantes", miJsonColgantes);
-//
 const productoCelulares = [{id:6, producto: "variosCelu", seccion:"Celulares", precio: 700},
                     {id:7, producto: "S10+Auris", seccion: "Celulares", precio: 700},
                     {id:8, producto: "genAuris", seccion: "Celulares", precio: 700},
                     {id:9, producto:"cableTipoC", seccion: "Celulares", precio: 700},
                     {id:10, producto: "vidrio", seccion: "Celulares", precio: 700}]
-//JSON;
-const miJSON = JSON.stringify(productoCelulares);
-console.log (miJSON);
-console.log (typeof miJSON);
-console.log (typeof productoCelulares);
-//STORAGE;
-const miJsonCelulares = JSON.stringify(productoCelulares);
-localStorage.setItem("celulares", miJsonCelulares);
-//
 const productoPC = [{id:11, producto:"joystick", seccion: "PC", precio: 1200},
 {id:12, producto: "antena", seccion: "PC", precio: 1000},
 {id: 13, producto: "kingston", seccion: "PC", precio: 300},
 {id: 14, producto: "usb5.0", seccion: "PC", precio: 500}]
-//STORAGE;
-const miJsonPC = JSON.stringify(productoPC);
-localStorage.setItem("PC", miJsonPC);
 //CONCAT;
 const productos = productoAros.concat(productoColgantes, productoCelulares, productoPC);
 //
@@ -124,35 +105,26 @@ function Tengo (b) {
 let yoDeberia = Tengo (14) ;
 console.log( yoDeberia(14)) ; //lo que debo tener cuando coloque todos los productos;
 console.log( yoDeberia(50) ) ; //lo que debo tener cuando coloque todos los productos;
-//fiter para filtrar por precio igual o menor a 500 pesos;
-const filtroPrecio = productos.filter( (el) => el.precio <= 500);
-console.log(filtroPrecio);
-// precios ordenados de menor a mayor;
-const precio = [500,700,1200,1000,300]
-precio.sort ( (a, b) => a - b);
-alert("nuestros precios de menor a mayor son:" + precio);
-console.log (precio);
-// precios ordenados de mayor a menor;
-precio.sort ( (a, b) => b - a);
-alert("nuestros precios de mayor a menor son:" + precio);
-console.log (precio);
-//
-alert("El precio del producto mas caro de la web es de " + Math.max (500,700,1200,1000,300));
-console.log(Math.max (500,700,1200,1000,300));
-//
-alert("El precio del producto mas barato de la web es de " + Math.min (500,700,1200,1000,300));
-console.log(Math.min (500,700,1200,1000,300));
-//DOM;
-let correccion = document.getElementById("error1");
-correccion.innerHTML = "Colgantes";
-console.log (correccion);
-document.getElementById("nombre").value = "Coder";
-// EVENTOS;
-let boton = document.getElementById("boton")
-boton.onclick = () => {console.log("Enviar")}
-boton.onmousemove = () => {console.log("Movimientos del mouse dentro del campo")};
-//STORAGE GETITEM;
-let obtener = localStorage.getItem('aros');
-alert ("esto es el array de objetos de AROS" + obtener);
-//
+//maquina de escribir
+
+function escribirEnPantalla(texto){
+    let arr=texto.split("");
+    i=0;
+let intervalo= setInterval(function(){
+    if(i==arr.length-1){ 
+        document.getElementById("maquina").innerHTML+=arr[i];
+        clearInterval(intervalo);} 
+    else {
+    if(arr[i]==" "){
+    document.getElementById("maquina").innerHTML+=arr[i];
+    document.getElementById("maquina").innerHTML+=arr[i+1];
+        i+=2;
+    }else{
+    document.getElementById("maquina").innerHTML+=arr[i];
+    i++;
+        }
+    }
+    },500); 
+}
+escribirEnPantalla("PAGINA EN PROCESO...");
 //
